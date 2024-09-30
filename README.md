@@ -4,7 +4,7 @@ Este proyecto tiene fines educativos y pertenece a la comunidad de desarrollador
 
 ## Requisitos 
 
-* 1_Tener instalado python
+* Tener instalado python
 
 ### Sigue estos pasos para clonar el repositorio
 
