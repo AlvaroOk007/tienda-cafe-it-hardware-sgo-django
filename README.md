@@ -19,7 +19,7 @@ Este proyecto tiene fines educativos y pertenece a la comunidad de desarrollador
         git clone https://github.com/AlvaroOk007/tienda-cafe-it-hardware-sgo-django.git
     ```
 
-#### Ejecutar la aplicacion en tu computadora
+### Ejecutar la aplicacion en tu computadora
 
 1. Crear entorno virtual para aislar la aplicacion de tus demas aplicaciones
 
