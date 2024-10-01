@@ -1,0 +1,47 @@
+{% load static %}
+<header class="header_container"> 
+    <div class="envios">
+        <span class="material-symbols-outlined">
+            local_shipping
+            </span>
+        <p>Envios a todo el pais</p>
+    </div>
+    <div class="header_head">
+        <div class="header_head-logo">
+            <h3>CAFÉ IT</h3>
+            <h2>Hardware de Computadoras</h2>
+        </div>
+        <div class="header_head-search">
+            <input type="text" class="header_head-search-input" placeholder="Buscar." >
+            <div class="header_head-search-buttom">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </div>
+        </div>
+        <div class="header_head-icons">
+            <div class="header_head-icons-account">
+                <span class="material-symbols-outlined">
+                    person
+                </span>
+            </div>
+            <div class="header_head_icons-cart">
+                <div class="cant">0</div>
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="header_footer">
+        <nav class="nav-bar">
+            <ul>
+                <li> <a href="{% url 'inicio'%}">Inicio</a></li>
+                <li><a href="{% url 'productos'%}">Productos </a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Marcas Sponsors</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,87 @@
+.section_categoria{
+    width: 20%;
+    padding: 15px 20px;
+}
+.conteiner-contenido{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & h2{
+        color: white;
+    }
+    .productos{
+        display: flex;
+        flex-wrap: wrap;
+        gap: wrap;
+        gap: 10px;
+    }
+}
+.conteiner_card{
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #161616;
+    width: 220px;
+    .header_card{
+        background-color: white;
+        height: 180px;
+        text-align: center;
+        & img{
+            height: 100%;
+        }
+    }
+}
+.card_nombre{
+    text-align: center;
+    display: block;
+    font-size: 15px;
+    font-weight: 100;
+    margin-top: 5px;
+    height: 40px;
+}
+.card_precio{
+    font-size: 20px;
+    font-family: oswald;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+}
+.card_btns{
+    margin: 10px 25px 30px 25px;
+    & p{
+        color: white;
+        border: 1px solid #00d5ff;
+        font-weight: 100;
+        font-size: 12px;
+        text-align: center;
+        padding: 5px 0;
+    }
+    & .ver_mas{
+        color: white;
+        background-color:#00d5ff ;
+        font-weight: 100;
+        font-size: 12px;
+        text-align: center;
+        padding: 5px 0;
+        margin-top: 10px;
+        & span{
+            text-shadow: 12px 13px 13px 31px black;
+        }
+    }
+}
+
+/*Estilos de los filtros laterales*/
+
+.title_filtro{
+    color: #00d5ff;
+    font-family:oswald;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.text-categoria{
+    font-size: 12px;
+    color: white;
+    font-weight: 100;
+}

@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html'%}
+{% load static %}
+{% block estilos%}
+    <link rel="stylesheet" href="{% static 'css/productos.css'%}">
+{%endblock%}
+{% block titulo%}Productos {% endblock%}
+
+{% block contenido%}
+    <section class="section_categoria">
+        <h3 class="title_filtro">Categorias</h3>
+        <ul>
+            {% for categoria in categorias%}
+                <li class="text-categoria">{{categoria.nombre}}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="conteiner-contenido">    
+        <h2>Productos</h2>    
+        <section class="productos">
+            {% include 'layouts/partials/cards.html'%}
+        </section>
+    </section>
+{% endblock %}
