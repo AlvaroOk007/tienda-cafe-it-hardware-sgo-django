@@ -68,7 +68,9 @@ En tu terminal o línea de comandos, ejecuta el siguiente comando para clonar el
 6. Le doy mecha:
 
     * Windows
-    ```bash python manage.py runserver```
+    ```
+        bash python manage.py runserver
+    ```
 
 ## Futuras Mejoras
 
