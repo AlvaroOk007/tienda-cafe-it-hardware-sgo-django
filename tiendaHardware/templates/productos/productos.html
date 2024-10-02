@@ -6,18 +6,32 @@
 {% block titulo%}Productos {% endblock%}
 
 {% block contenido%}
-    <section class="section_categoria">
-        <h3 class="title_filtro">Categorias</h3>
-        <ul>
-            {% for categoria in categorias%}
-                <li class="text-categoria">{{categoria.nombre}}</li>
-            {% endfor %}
-        </ul>
-    </section>
-    <section class="conteiner-contenido">    
+{% csrf_token %}
+<div class="conteiner-productos">
+    <section class="conteiner-cards">    
         <h2>Productos</h2>    
-        <section class="productos">
-            {% include 'layouts/partials/cards.html'%}
+        <section class="section_filtros">
+            <select name="filtro_categoria" id="filtro_categoria" class="filtros-conteiner">  
+                <option value="Filtrar por Categoria">Filtrar por Categoria</option>
+                {% for categoria in categorias%}
+                    <option value="{{categoria.nombre}}">{{categoria.nombre}}</option>
+                {% endfor %}
+            </select>
+            <select name="filtro_marca" id="filtro_marca" class="filtros-conteiner">
+                <option value="Filtrar por Marca">Filtrar por Marca</option>
+                {% for marca in marcas %} 
+                <option value="{{marca.nombre}}">{{marca.nombre}}</option>
+                {% endfor %}
+            </select>
+            <button id="btn-aplicar-filtros"> Aplicar Filtro</button>
+            <button id="btn-quitar-filtro"> Quitar Filtros </button>
+        </section>
+        <section class="productos" id="conteiner-productos">
+            {% include 'productos/partials/cards.html'%}
         </section>
     </section>
+</div>
+{% endblock %}
+{% block misScripts%} 
+    <script src="{%static 'js/productos.js'%}"></script>
 {% endblock %}

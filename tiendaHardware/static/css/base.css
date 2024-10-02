@@ -156,8 +156,6 @@
 /*Estilos del main*/
 .main-base{
     padding: 0 30px;
-    display: flex;
-    gap: 10px;
     margin-top: 20px;
 }
 body{
