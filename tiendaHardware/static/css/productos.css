@@ -136,3 +136,13 @@
 .mostrar{
     display: block;
 }
+
+.footer{
+    margin-top: 50px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.911);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
