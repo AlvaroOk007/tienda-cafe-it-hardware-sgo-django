@@ -1,6 +1,8 @@
 /* comportamiento de filtros de busqueda */
 
 const btnAplicarFiltro = document.getElementById('btn-aplicar-filtros')
+const btnQuitarFiltro = document.getElementById('btn-quitar-filtro')
+
 btnAplicarFiltro.addEventListener('click', ()=>{
     /* 
         Comportamiento: Cuando el usuario de click en "APLICAR FILTROS" js escuchara el click y mandara una peticion a django para obtener los datos de la bd aplicando los filtros correspondientes
@@ -16,9 +18,18 @@ btnAplicarFiltro.addEventListener('click', ()=>{
     if (tieneCatergoria || tieneMarca){
         /*Verificamos que tenga categoria o marca */
         enviarFiltros(filtros)
+        btnQuitarFiltro.classList.add('mostrar')
     }
 })
 
+btnQuitarFiltro.addEventListener('click',()=>{
+    const filtros = {
+        categoria:'Filtrar por Categoria',
+        marca:'Filtrar por Marca',
+    }
+    enviarFiltros(filtros)
+    btnQuitarFiltro.classList.toggle('mostrar')
+})
 /* */
 
 const enviarFiltros = async (data) => {
@@ -27,7 +38,6 @@ const enviarFiltros = async (data) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
-                // 'X-CSRFToken': getCookie('csrftoken'),  // Descomentar si usas CSRF
             },
             body: new URLSearchParams(data),  // Convierte el objeto a formato de formulario
         });

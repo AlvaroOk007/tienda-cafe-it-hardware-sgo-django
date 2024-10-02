@@ -23,8 +23,10 @@
                 <option value="{{marca.nombre}}">{{marca.nombre}}</option>
                 {% endfor %}
             </select>
-            <button id="btn-aplicar-filtros"> Aplicar Filtro</button>
-            <button id="btn-quitar-filtro"> Quitar Filtros </button>
+            <div class="btns-filtros">
+                <button id="btn-aplicar-filtros" class="btn-aplicar-filtro"> Aplicar Filtro</button>
+                <button id="btn-quitar-filtro" class="btn-quitar-filtro">X Quitar Filtros </button>
+            </div>
         </section>
         <section class="productos" id="conteiner-productos">
             {% include 'productos/partials/cards.html'%}

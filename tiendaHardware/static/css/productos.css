@@ -80,10 +80,12 @@
 
 .section_filtros{
     display: flex;
+    align-items: center;
     gap: 20px;
     margin-bottom: 20px;
 }
 .filtros-conteiner{
+    height: 25px;
     background: none;
     border: none;
     color: rgb(255, 255, 255);
@@ -97,4 +99,40 @@
         color: #000000;
         outline: none;
     }
+}
+
+.btns-filtros{
+    width: 120px;
+    display: flex;
+    & button{
+        background: none;
+        border: none;
+        padding: 2px 5px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+}
+
+.btn-aplicar-filtro{
+    color: #f1f1f1ab;
+    font-weight: 100;
+    transition: color ease-in .1s;
+    &:hover{
+        text-decoration: underline;
+        color: #00d5ffde;
+        
+    }
+}
+.btn-quitar-filtro{
+    color: rgb(255, 146, 146);
+    transition: color ease-in .1s;
+    display: none;
+    &:hover{
+        text-decoration: underline;
+        color: rgb(255, 34, 34);
+    }
+}
+
+.mostrar{
+    display: block;
 }
