@@ -3,13 +3,14 @@
 {% block estilos%}
     <link rel="stylesheet" href="{% static 'css/productos.css'%}">
 {%endblock%}
+{% load mis_filtros %}
 {% block titulo%}Productos {% endblock%}
-
+{% block headerScripts%}{% endblock %}
 {% block contenido%}
 {% csrf_token %}
 <div class="conteiner-productos">
     <section class="conteiner-cards">    
-        <h2>Productos</h2>    
+        <h2 class="conteiner-cards_titulo"> <span>Productos</span> <div class="linea_titulo"></div></h2>    
         <section class="section_filtros">
             <select name="filtro_categoria" id="filtro_categoria" class="filtros-conteiner">  
                 <option value="Filtrar por Categoria">Filtrar por Categoria</option>

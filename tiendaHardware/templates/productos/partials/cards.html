@@ -1,15 +1,18 @@
+
 {% for producto in productos %}
-            <article class="conteiner_card">
-                <div class="header_card">
-                    <img src="{{producto.imagen.url}}" alt="{{producto.nombre}}">
+        <article class="conteiner_card">
+            <div class="header_card">
+                <img src="{{producto.imagen.url}}" alt="{{producto.nombre}}">
+            </div>
+            <div class="footer_card">
+                <h2 class="card_nombre">{{producto.nombre}}</h2>
+                <h2 class="card_precio">{{producto.precio}}</h2>
+                <div class="card_btns">
+                    <p>¡Hasta 12 cuotas fijas!</p>
+                    <a class="ver_mas" href="{% url 'producto' producto.id producto.nombre %}">
+                        <div class="btn-ver_mas">VER MAS</div> 
+                    </a>
                 </div>
-                <div class="footer_card">
-                    <h2 class="card_nombre">{{producto.nombre}}</h2>
-                    <h2 class="card_precio">{{producto.precio}}</h2>
-                    <div class="card_btns">
-                        <p>¡Hasta 12 cuotas fijas!</p>
-                        <div class="ver_mas" id = {{producto.id}}><span>VER MAS</span></div>
-                    </div>
-                </div>
-            </article>
-            {% endfor %}
+            </div>
+        </article>
+{% endfor %}

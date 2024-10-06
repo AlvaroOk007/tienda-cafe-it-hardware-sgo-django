@@ -1,6 +1,7 @@
 
 .conteiner-productos{
     width: 100%;
+    min-height: 60vh;
 }
 
 .conteiner-cards{
@@ -9,10 +10,34 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    & h2{
-        color: white;
+    & .conteiner-cards_titulo{
+        text-align: center;
+        margin-bottom: 10px;
+        position: relative;
+        width: 100%;
+        & span{
+            color: white;
+            font-size: 1.5rem;
+            font-family: oswald;
+            font-weight: 400;
+            background-color: #1d1d1d;
+            padding: 0 20px;
+        }
+
     }
     
+}
+.linea_titulo{
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    width: 90%;
+    height: 1px;
+    z-index: -1;
+    background-color: #00d5ff;
 }
 .productos{
     display: flex;
@@ -28,13 +53,21 @@
     overflow: hidden;
     background-color: #161616;
     width: 220px;
+    transition: transform ease-in .2s;
     .header_card{
         background-color: white;
         height: 180px;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         & img{
-            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 10px;
         }
+    }
+    &:hover{
+        transform: scale(1.03);
     }
 }
 .card_nombre{
@@ -44,13 +77,15 @@
     font-weight: 100;
     margin-top: 5px;
     height: 40px;
+    color: white;
 }
 .card_precio{
     font-size: 20px;
     font-family: oswald;
-    font-weight: 500;
+    font-weight: 300;
     text-align: center;
     margin-top: 10px;
+    color: white;
 }
 .card_btns{
     margin: 10px 25px 30px 25px;
@@ -63,15 +98,26 @@
         padding: 5px 0;
     }
     & .ver_mas{
-        color: white;
+        display: block;
         background-color:#00d5ff ;
-        font-weight: 100;
-        font-size: 12px;
         text-align: center;
         padding: 5px 0;
         margin-top: 10px;
-        & span{
-            text-shadow: 12px 13px 13px 31px black;
+        transition: background-color ease-in .2s;
+        border: 1px solid #00d5ff00;
+        & .btn-ver_mas{
+            font-weight: 200;
+            font-size: 12px;
+            color: white;
+            transition: color ease .2s;
+        }
+        &:hover{
+            background-color: #ffffffd3;
+            border: 1px solid #00d5ff;
+            & .btn-ver_mas{
+                color: #00849e;
+                font-weight: 400;
+            }
         }
     }
 }
@@ -137,12 +183,11 @@
     display: block;
 }
 
-.footer{
-    margin-top: 50px;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.911);
+/*Estilos de texto para cuando no se haya encontrado resultado*/
+
+.cero_resultados{
+    font-size: 1.5rem;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-weight: 100;
+
 }

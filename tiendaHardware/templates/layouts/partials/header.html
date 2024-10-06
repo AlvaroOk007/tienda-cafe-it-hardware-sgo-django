@@ -1,9 +1,9 @@
 {% load static %}
 <header class="header_container"> 
-    <div class="envios">
+    <div class="envios_header">
         <span class="material-symbols-outlined">
             local_shipping
-            </span>
+        </span>
         <p>Envios a todo el pais</p>
     </div>
     <div class="header_head">
@@ -11,14 +11,14 @@
             <h3>CAFÉ IT</h3>
             <h2>Hardware de Computadoras</h2>
         </div>
-        <div class="header_head-search">
+        <form class="header_head-search">
             <input type="text" class="header_head-search-input" placeholder="Buscar." >
-            <div class="header_head-search-buttom">
+            <button type="submit" class="header_head-search-buttom">
                 <span class="material-symbols-outlined">
                     search
                 </span>
-            </div>
-        </div>
+            </button>
+        </form>
         <div class="header_head-icons">
             <div class="header_head-icons-account">
                 <span class="material-symbols-outlined">
@@ -26,7 +26,7 @@
                 </span>
             </div>
             <div class="header_head_icons-cart">
-                <div class="cant">0</div>
+                <p class="cant" id="carrito_compras">0</p>
                 <span class="material-symbols-outlined">
                     shopping_cart
                 </span>

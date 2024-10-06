@@ -15,12 +15,16 @@ class Producto(models.Model):
     precio = models.FloatField(default=0)
     descripcion = models.CharField(max_length=255)
     imagen = models.ImageField(upload_to='productos/',null=True)
+    stock = models.IntegerField(default=10)
+    #Claves foraneas
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE,default=1)
     marca = models.ForeignKey(Marca,on_delete=models.CASCADE,default=1)
 
+
     def __str__(self) -> str:
         return self.nombre
-    
+    def haySrock(self):
+        return self.stock>0
     def mostrarImagen(self):
         if self.imagen:
             return format_html('<img src = {} width= "100" heigth  = "100" />'.format(self.imagen.url))

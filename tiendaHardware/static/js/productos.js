@@ -7,14 +7,19 @@ btnAplicarFiltro.addEventListener('click', ()=>{
     /* 
         Comportamiento: Cuando el usuario de click en "APLICAR FILTROS" js escuchara el click y mandara una peticion a django para obtener los datos de la bd aplicando los filtros correspondientes
     */
+
+    //Obtengo valores de los botones de filtros
     const categoria = document.getElementById('filtro_categoria').value
     const marca = document.getElementById('filtro_marca').value
-    const tieneCatergoria = categoria.value === 'Filtrar por Categoria' ? false : true
-    const tieneMarca = marca.value === 'Filtrar por Marca' ? false : true 
+    //Corroboro si tienen marca o no
+    const tieneCatergoria = categoria != 'Filtrar por Categoria' 
+    const tieneMarca = marca != 'Filtrar por Marca'
+    //Creo un dicionario con los filtros que ingresaron
     const filtros = {
         categoria:categoria,
         marca:marca,
     }
+    //Consulto si tiene Ambos filtros
     if (tieneCatergoria || tieneMarca){
         /*Verificamos que tenga categoria o marca */
         enviarFiltros(filtros)
@@ -23,6 +28,8 @@ btnAplicarFiltro.addEventListener('click', ()=>{
 })
 
 btnQuitarFiltro.addEventListener('click',()=>{
+    document.getElementById('filtro_categoria').value = 'Filtrar por Categoria'
+    document.getElementById('filtro_marca').value = 'Filtrar por Marca'
     const filtros = {
         categoria:'Filtrar por Categoria',
         marca:'Filtrar por Marca',
@@ -46,23 +53,29 @@ const enviarFiltros = async (data) => {
             const resultados = await response.json();
             const conteiner_productos = document.getElementById('conteiner-productos')
             conteiner_productos.innerHTML = ``
-            resultados.forEach(resultado=>{
-                conteiner_productos.innerHTML += `
-                            <article class="conteiner_card">
-                                <div class="header_card">
-                                    <img src="/media/${resultado.imagen}" alt="${resultado .nombre}">
-                                </div>
-                                <div class="footer_card">
-                                    <h2 class="card_nombre">${resultado.nombre}</h2>
-                                    <h2 class="card_precio">${resultado.precio}</h2>
-                                    <div class="card_btns">
-                                        <p>¡Hasta 12 cuotas fijas!</p>
-                                        <div class="ver_mas" id = ${resultado.id}><span>VER MAS</span></div>
+            if(resultados.length > 0){
+                resultados.forEach(resultado=>{
+                    conteiner_productos.innerHTML += `
+                                <article class="conteiner_card">
+                                    <div class="header_card">
+                                        <img src="/media/${resultado.imagen}" alt="${resultado .nombre}">
                                     </div>
-                                </div>
-                            </article>
-                    `
-            })
+                                    <div class="footer_card">
+                                        <h2 class="card_nombre">${resultado.nombre}</h2>
+                                        <h2 class="card_precio">${resultado.precio}</h2>
+                                        <div class="card_btns">
+                                            <p>¡Hasta 12 cuotas fijas!</p>
+                                            <a class="ver_mas" href="{% url 'producto_detalle' producto.id producto.nombre %}">
+                                                <div class="btn-ver_mas">VER MAS</div> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                        `
+                })
+            }else{
+                conteiner_productos.innerHTML += `<p class = "cero_resultados">¡UPS! No se encontraron resultados.</p>`
+            }
         } else {
             console.error("Error en la solicitud:", response.status);
         }

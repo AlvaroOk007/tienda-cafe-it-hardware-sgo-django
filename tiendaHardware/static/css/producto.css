@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/*Estilos de producto*/
+
+.conteiner_producto{
+    color: white;
+    padding: 15px 25px;
+    border: 1px solid rgb(63, 63, 63);
+    border-radius: 5px;
+    width: 100%;
+}
+.producto_header{
+    display: flex;
+}
+
+.conteiner_producto_t_y{
+    width: 60%;
+}
+.producto_header-nombre{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.producto_conteiner-imagen{
+    display: flex;
+    gap: 5px;
+    & .listado_imagenes_producto{
+        .imagen_listado{
+            width: 95px;
+            height: 95px;
+            padding: 5px;
+            background-color: white;
+        }
+    }
+    & .conteiner_imagen_producto{
+        height: 70vh;
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        & .imagen_producto{
+            max-width: 100%;
+            max-height: 100%; 
+        }
+    }
+}
+
+.divisor{
+    margin: 0px 0 10px 0;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+/*Estilos de Aside de producto*/
+.producto_conteiner-aside{
+    display: flex;
+    width: 40%;
+    gap: 1rem;
+    align-items: center;
+    flex-direction: column; 
+    align-content: flex-start; 
+}
+
+.producto_precio{    
+    color: #00d5ff;
+    & p{
+        font-size: 1.5rem;
+        font-family: oswald;
+        & span{
+            font-family: oswald;
+            font-size: 3rem;
+            font-weight: 200;
+        }
+    } 
+}
+
+.producto_btns_cantidad{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(216, 216, 216, 0.384);
+    background-color: rgb(71, 71, 71);
+    & .producto_btns_cantidad-btn{
+        height: 2rem;
+        width: 2.5rem;
+        background-color: rgb(41, 41, 41);
+        border: none;
+        color: rgb(190, 190, 190);
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(31, 31, 31);
+            color: rgb(204, 204, 204);
+        }
+    }
+
+    & .producto_btns_cantidad-cantidad{
+        text-align: center;
+        font-size: 1.3rem;
+        width: 4rem;
+    }
+}
+.producto_btn_agregar_carrito{
+    height: 2rem;
+    width: 9rem;
+    & button{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    .producto_btn_agregar_carrito-con{
+        text-transform: uppercase;
+        background-color: rgb(71, 71, 71);
+        color: #00aed1;
+        font-weight: 500;
+        font-size: 0.7rem;
+    }
+}
+
+.producto_btn_boton-comprar button{
+    height: 2rem;
+    width: 9rem;
+    background-color: #00aed1;
+    border: 1px solid #00d5ff;
+    border-radius: 10px;
+    color: #ebebeb;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.divisor_aside{
+    width: 90%;
+    height: 1px;
+    background-color: rgb(78, 78, 78);
+}
+
+.margin_top{
+    margin-top: -1rem;
+}
+.producto_list_caracteristica{
+    align-self: flex-start;
+    margin-left: 40px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    & li{
+        display: flex; 
+        gap: 10px;
+        & img{
+            width: 24px;
+            height: 24px;
+        }
+        & .producto_envios{
+            display: inline;
+            & .envios_titulo{
+                background-color: none;
+                margin: 0;
+                padding: 0;
+            }
+            & .envios_costo{
+                display: block;
+                font-size: 0.6rem;
+                color: #00aed1;
+            }
+        }
+    }
+}
+
+.margines{
+    margin: 20px 0 10px 0;
+}
+/*Footer*/
+.margin_top_bottom{
+    margin: 20px 0;
+}
+.producto_footer{
+    width: 100%;
+}
+.producto_footer-titulo{
+    text-align: center;
+    font-family: oswald;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.contenido_adicion_conteiner-cards{
+    display: flex;
+    gap: 20px;
+    margin: 0 20px;
+}
+.contenido_adicional-titulo{
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    color: white;
+    font-family: oswald;
+    font-weight: 200;
+    
+}

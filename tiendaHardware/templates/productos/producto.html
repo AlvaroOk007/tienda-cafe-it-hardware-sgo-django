@@ -1,0 +1,102 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block titulo%} {{producto.nombre}} {% endblock %}
+{% block headerScripts%} 
+{% endblock %}
+{% block estilos%} <link rel="stylesheet" href="{% static 'css/producto.css'%}">
+<link rel="stylesheet" href="{% static 'css/productos.css'%}">  
+{% endblock %}
+{% block contenido %} 
+    <p>Categoria: <span>{{producto.categoria.nombre}}</span></p>
+    <section class="conteiner_producto">
+        <h5 class="producto_header-nombre uno">{{producto.nombre}}</h5>
+        <div class="producto_header">
+            <div class="conteiner_producto_t_y">
+                <div class="divisor"></div>
+                <div class="producto_conteiner-imagen dos">
+                    <div class="listado_imagenes_producto">
+                        <img class="imagen_listado" src="{{producto.imagen.url}}" alt="{{producto.nombre}}" >
+                    </div><!--Proximamente-->
+                    <div class="conteiner_imagen_producto">
+                        <img class="imagen_producto" src="{{producto.imagen.url}}" alt="{{producto.nombre}}" >
+                    </div>
+                </div>
+            </div>
+            <aside class="producto_conteiner-aside">
+                <div class="producto_precio">
+                    <p>$
+                        <span id="precio_contado">{{producto.precio}}</span>
+                    </p>   
+                    <!-- <p>Precio de lista: <span>{{producto.precioLista}}</span></p> -->
+                </div>   
+                <div class="divisor_aside margin_top"></div>  
+                <div class="producto_btn_agregar_carrito">
+                    {% if producto.stock > 0 %}
+                        <button class="producto_btn_agregar_carrito-con" onclick="agregarCarrito({{producto.id}})">Agregar Carrito</button>
+                    {% else %}
+                        <button class="producto_btn_agregar_carrito-sin"disabled>Sin Stock</button>
+                    {% endif%}
+                </div>
+                <div class="producto_btn_boton-comprar">
+                    {% if producto.stock > 0%} 
+                        <button>Comprar</button>
+                    {% endif %}
+                </div>
+                <div class="producto_btns_cantidad">
+                    <button class="producto_btns_cantidad-btn">-</button>
+                    <p class="producto_btns_cantidad-cantidad">1</p>
+                    <button class="producto_btns_cantidad-btn">+</button>
+                </div>
+                <div class="divisor_aside margines"></div>  
+
+                <ul class="producto_list_caracteristica">
+                    <li>
+                        <img src="{% static 'imgs/icons/cuotas.png'%}" alt="">
+                        <p>12 Cuotas fijas de {{ producto.precio |floatformat:2}}</p>
+                    </li>
+                    <li><div class="divisor_aside"></div></li>
+                    <li>
+                        <img src="{% static 'imgs/icons/enviado.png'%}" alt="">
+                        <div class="producto_envios">
+                            <p class="envios_titulo">Envios a todo el pais</p>
+                            <a href="#" class="envios_costo">Ver costo de envio</a>
+                        </div>
+                    </li>
+                    <li><div class="divisor_aside"></div></li>
+                    <li>
+                        <img src="{% static 'imgs/icons/compra-local.png'%}">
+                        <div class="producto_envios">
+                            <p class="envios_titulo">Retiro gratis desde local</p>
+                            <span class="envios_costo">Una direccion</span>
+                        </div>
+                    </li>
+                    <li><div class="divisor_aside"></div></li>
+                    <li>
+                        <img src="{% static 'imgs/icons/seguro-de-calidad.png'%}" alt="">
+                        <p>Garantia <span>360 días</span></p>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="divisor margin_top_bottom"></div>
+        <div class="producto_footer">
+            <h2 class="producto_footer-titulo">
+                Descripción del Producto
+            </h2>
+            <p>{{producto.descripcion}}</p>
+        </div>
+    </section>
+    <section class="productos_recomendados">
+
+    </section>
+    <section class="conteiner_contenido-adicional">
+        <h2 class="contenido_adicional-titulo"> <div class="linea_titulo"></div> Productos Relacionados </h2>
+        
+        <section class="contenido_adicion_conteiner-cards">
+            {% include 'productos/partials/cards.html'%}
+        </section>
+    </section>
+{% endblock %}
+{% block misScripts%}
+    <script src="{% static 'js/producto.js'%}"></script>
+{% endblock %}
